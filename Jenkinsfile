@@ -1,5 +1,6 @@
-node {
-   stage("Checkout") { 
+  node {
+    stages {
+      stage("Checkout") { 
       // Get some code from a GitHub repository
       git 'https://github.com/raghav571/jpet.git'
       // Get the Maven tool.
@@ -7,7 +8,7 @@ node {
       // **       in the global configuration.           
       
    }
-   env.JAVA_HOME = "${'/usr/lib/jvm/java-8-oracle'}"
+   env.JAVA_HOME = "${'/opt/jdk1.8.0_131'}"
    env.PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
    sh 'java -version' 
 
@@ -22,4 +23,5 @@ node {
          sh 'mvn package'
        }
      }
+    }
 }
