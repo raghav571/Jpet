@@ -23,6 +23,6 @@
        }
    
     stage("Deploy") {
-         sh 'scp -r /var/lib/jenkins/workspace/Scripted-Pipeline/target/jpet.war ubuntu@54.175.109.197:/opt/apache-tomcat-7.0.96/webapps -p 'root''
+         deploy contextPath: null, onFailure: false, war: 'ubuntu@54.175.109.197:/opt/apache-tomcat-7.0.96/webapps -u ubuntu -p root'
        }
      }
