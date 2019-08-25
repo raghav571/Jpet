@@ -1,7 +1,7 @@
 node {
    stage("Checkout") { 
       // Get some code from a GitHub repository
-      git 'https://github.com/arigela1983/jpetstore-6.git'
+      git 'https://github.com/raghav571/jpet.git'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
