@@ -24,6 +24,6 @@
    
     stage("Deploy") {
          //deploy contextPath: null, onFailure: false, war: 'ubuntu@54.175.109.197:/opt/apache-tomcat-7.0.96/webapps -u ubuntu -p root'
-         deploy adapters: [tomcat7(credentialsId: '32a5724e-30f4-4910-87d9-0bc6540d6e24', path: '', url: 'https://3.87.216.51:8080')], contextPath: null, onFailure: false, war: ''   
+         deploy adapters: [tomcat7(credentialsId: '32a5724e-30f4-4910-87d9-0bc6540d6e24', path: '', url: 'https://3.87.216.51:8080')], contextPath: null, onFailure: false, war: '**/*.war'
     }
      }
