@@ -1,6 +1,5 @@
   node {
-    stages {
-      stage("Checkout") { 
+    stage("Checkout") { 
       // Get some code from a GitHub repository
       git 'https://github.com/raghav571/jpet.git'
       // Get the Maven tool.
@@ -24,4 +23,3 @@
        }
      }
     }
-}
