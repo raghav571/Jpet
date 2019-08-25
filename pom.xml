@@ -159,7 +159,7 @@
   </dependencies>
 
   <build>
-    <finalName>jpetstore</finalName>
+    <finalName>jpet</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
