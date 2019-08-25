@@ -5,21 +5,24 @@
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
-      
-   }
+      }
    env.JAVA_HOME = "${'/opt/jdk1.8.0_131'}"
    env.PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
    sh 'java -version' 
-
-    env.M2_HOME = "${'/opt/apache-maven-3.6.0/'}"
-    env.PATH = "${env.M2_HOME}/bin:${env.PATH}"
-    sh 'mvn -version'
-
-    stage("Compile") {
+   
+   env.M2_HOME = "${'/opt/apache-maven-3.6.0/'}"
+   env.PATH = "${env.M2_HOME}/bin:${env.PATH}"
+   sh 'mvn -version'
     
-        sh 'mvn compile'
-    stage("package") {
+   stage("Compile") {
+            sh 'mvn compile'
+        }
+    
+   stage("package") {
          sh 'mvn package'
        }
+   
+    stage("Deploy") {
+         sh 'scp /var/lib/jenkins/workspace/Scripted-Pipeline/target/jpet.war ubuntu@54.175.109.197:/opt/apache-tomcat-7.0.96/webapps -u ubuntu -p root'
+       }
      }
-    }
