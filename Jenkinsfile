@@ -34,6 +34,8 @@ node {
     // some block
 }
          sh 'scp -r /var/lib/jenkins/workspace/Scripted-Pipeline/target/*.war ubuntu@3.93.179.42:/opt/apache-tomcat-7.0.96/webapps'
-         input message: 'enter password'
+         input message: 'enter password', parameters: [password(defaultValue: 'value', description: '', name: 'hidden')]
+
+    //input message: 'enter password'
    }
      }
