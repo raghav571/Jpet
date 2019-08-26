@@ -1,9 +1,3 @@
-properties([
-    parameters([
-        password(name: 'KEY', description: 'Encryption key')
-    ])
-])  
-
 node {
     stage("Checkout") { 
       // Get some code from a GitHub repository
@@ -36,9 +30,14 @@ node {
          //deploy contextPath: null, onFailure: false, war: 'ubuntu@54.175.109.197:/opt/apache-tomcat-7.0.96/webapps -u ubuntu -p root'
          //sh 'cd /var/lib/jenkins/workspace/Scripted-Pipeline/target'
          //deploy adapters: [tomcat7(credentialsId: '4e201b56-24eb-4f06-b184-d780b8654784', path: '', url: 'https://3.87.216.51:8080')], contextPath: null, war: '**/*.war'
-         withCredentials([usernameColonPassword(credentialsId: '6ff492ce-520f-4682-b3d4-93ec87cd4c31', variable: '')]) {
+         //withCredentials([usernameColonPassword(credentialsId: '6ff492ce-520f-4682-b3d4-93ec87cd4c31', variable: '')]) {
     // some block
 }
+         properties([
+    parameters([
+        password(name: 'KEY', description: 'Encryption key')
+    ])
+]) 
          sh 'scp -r /var/lib/jenkins/workspace/Scripted-Pipeline/target/*.war ubuntu@3.93.179.42:/opt/apache-tomcat-7.0.96/webapps'
          input message: 'enter password'
    }
