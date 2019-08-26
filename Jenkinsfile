@@ -35,7 +35,9 @@ node {
          sh 'ls /var/lib/jenkins/workspace/Scripted-Pipeline/target/*.war'   
          input message: 'enter password', parameters: [password(defaultValue: 'value', description: '', name: 'hidden')]  
          sh 'scp -p /var/lib/jenkins/workspace/Scripted-Pipeline/target/*.war ubuntu@3.93.179.42:/opt/apache-tomcat-7.0.96/webapps'
-         
+         withCredentials([string(credentialsId: 'my-pass', variable: 'PW1')]) {
+    echo "My password is '${PW1}'!"
+}
 
     //input message: 'enter password'
    }
