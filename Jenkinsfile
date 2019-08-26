@@ -33,11 +33,6 @@ node {
          //withCredentials([usernameColonPassword(credentialsId: '6ff492ce-520f-4682-b3d4-93ec87cd4c31', variable: '')]) {
     // some block
 }
-         properties([
-    parameters([
-        password(name: 'KEY', description: 'Encryption key')
-    ])
-]) 
          sh 'scp -r /var/lib/jenkins/workspace/Scripted-Pipeline/target/*.war ubuntu@3.93.179.42:/opt/apache-tomcat-7.0.96/webapps'
          input message: 'enter password'
    }
