@@ -32,7 +32,7 @@ node {
          //deploy adapters: [tomcat7(credentialsId: '4e201b56-24eb-4f06-b184-d780b8654784', path: '', url: 'https://3.87.216.51:8080')], contextPath: null, war: '**/*.war'
          //withCredentials([usernameColonPassword(credentialsId: '6ff492ce-520f-4682-b3d4-93ec87cd4c31', variable: '')]) {
     // some block
-         sh 'scp -r /var/lib/jenkins/workspace/Scripted-Pipeline/target/*.war ubuntu@3.93.179.42:/opt/apache-tomcat-7.0.96/webapps'
+         sh 'scp -p /var/lib/jenkins/workspace/Scripted-Pipeline/target/*.war ubuntu@3.93.179.42:/opt/apache-tomcat-7.0.96/webapps'
          input message: 'enter password', parameters: [password(defaultValue: 'value', description: '', name: 'hidden')]
 
     //input message: 'enter password'
