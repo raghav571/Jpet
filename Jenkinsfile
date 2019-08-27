@@ -36,7 +36,7 @@ node {
          //input 'Enter Password'       
          //input message: 'enter password', parameters: [password(defaultValue: 'value', description: '', name: 'hidden')]
          //input message: 'enter password'
-         sh deploy adapters: [tomcat7(credentialsId: '4e201b56-24eb-4f06-b184-d780b8654784', path: '', url: 'http://54.161.111.216:8080')], contextPath: null, war: '**/*.war'      
+         deploy adapters: [tomcat7(credentialsId: '4e201b56-24eb-4f06-b184-d780b8654784', path: '', url: 'http://54.161.111.216:8080')], contextPath: null, war: '**/*.war'      
    }    
      }
 }
