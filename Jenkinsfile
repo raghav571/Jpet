@@ -32,11 +32,10 @@ node {
          //deploy adapters: [tomcat7(credentialsId: '4e201b56-24eb-4f06-b184-d780b8654784', path: '', url: 'https://3.87.216.51:8080')], contextPath: null, war: '**/*.war'
          //withCredentials([usernameColonPassword(credentialsId: '6ff492ce-520f-4682-b3d4-93ec87cd4c31', variable: '')]) {
          // some block
-         sh 'scp /var/lib/jenkins/workspace/Scripted-Pipeline/target/*.war ubuntu@54.161.111.216:/opt/apache-tomcat-7.0.96/webapps'
-         input 'Enter Password'       
+         //sh 'scp /var/lib/jenkins/workspace/Scripted-Pipeline/target/*.war ubuntu@54.161.111.216:/opt/apache-tomcat-7.0.96/webapps'
+         //input 'Enter Password'       
          //input message: 'enter password', parameters: [password(defaultValue: 'value', description: '', name: 'hidden')]
          //input message: 'enter password'
-         //deploy adapters: [tomcat7(credentialsId: '4e201b56-24eb-4f06-b184-d780b8654784', path: '', url: 'http://54.173.198.104:8080')], contextPath: null, war: '**/*.war'
-         //deploy adapters: [tomcat7(credentialsId: '4e201b56-24eb-4f06-b184-d780b8654784', path: '', url: 'http://54.173.198.104:8080')], contextPath: null, war: '**/*.war'
+         sh deploy adapters: [tomcat7(credentialsId: '4e201b56-24eb-4f06-b184-d780b8654784', path: '', url: 'http://54.161.111.216:8080')], contextPath: null, war: '**/*.war'      
    }    
      }
