@@ -35,6 +35,6 @@ node {
          //sh 'scp -r /var/lib/jenkins/workspace/Scripted-Pipeline/target/*.war ubuntu@3.93.179.42:/opt/apache-tomcat-7.0.96/webapps'
          //input message: 'enter password', parameters: [password(defaultValue: 'value', description: '', name: 'hidden')]
          //input message: 'enter password'
-         deploy adapters: [tomcat7(credentialsId: '4e201b56-24eb-4f06-b184-d780b8654784', path: '', url: 'http://18.234.204.164:8080')], contextPath: null, war: '**/*.war'
+         deploy adapters: [tomcat7(credentialsId: '4e201b56-24eb-4f06-b184-d780b8654784', path: '', url: 'http://54.173.198.104:8080')], contextPath: null, war: '**/*.war'
    }
      }
